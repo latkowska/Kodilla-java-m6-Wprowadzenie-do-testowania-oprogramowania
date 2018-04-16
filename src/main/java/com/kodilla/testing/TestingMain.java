@@ -8,10 +8,9 @@ public class TestingMain {
 
         Calculator calculate1 = new Calculator();
 
-        int firstMethodResult = calculate1.add(5, 3);
-        int testResult = 10;
+        int addResult = calculate1.add(5, 3);
 
-        if (firstMethodResult != testResult) {
+        if (addResult == 8) {
             System.out.println("Pierwszy test jednostkowy: Test ok!");
         } else {
             System.out.println("Pierwszy test jednostkowy: Error!");
@@ -19,9 +18,9 @@ public class TestingMain {
 
         Calculator calculate2 = new Calculator();
 
-        int methodResult = calculate2.subtract(5, 3);
+        int subtractResult = calculate2.subtract(6, 3);
 
-        if (methodResult != testResult) {
+        if (subtractResult == 2) {
             System.out.println("Drugi test jednostkowy: Test ok!");
         } else {
             System.out.println("Drugi test jednostkowy: Error!");
