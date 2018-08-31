@@ -1,5 +1,9 @@
 package com.kodilla.testing.user;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class SimpleUser {
     private String username;
 
@@ -11,3 +15,5 @@ public class SimpleUser {
         return username;
     }
 }
+
+
