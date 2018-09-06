@@ -9,7 +9,7 @@ public class Square implements Shape {
 
     @Override
     public String getShapeName() {
-        return "square";
+        return "Square";
     }
 
     @Override
