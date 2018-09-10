@@ -11,11 +11,11 @@ public class Triangle implements Shape {
 
     @Override
     public String getShapeName() {
-        return "triangle";
+        return "Triangle";
     }
 
     @Override
     public double getField() {
-        return 1/2*a*h;
+        return 1 / 2 * a * h;
     }
 }

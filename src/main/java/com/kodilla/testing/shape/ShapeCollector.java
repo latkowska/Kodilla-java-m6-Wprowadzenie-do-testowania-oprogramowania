@@ -5,27 +5,27 @@ import java.util.ArrayList;
 
 public class ShapeCollector {
 
-    private ArrayList<Shape> figures = new ArrayList<Shape>();
+    private ArrayList<Shape> figures = new ArrayList<>();
 
-
-    public void addFigure(Shape shape) {
-        //do nothing
+    public Shape addFigure(Shape shape) {
+        figures.add(shape);
+        return shape;
     }
 
     public boolean removeFigure(Shape shape) {
-        return true; //for now
+        figures.remove(shape);
+        return true;
     }
 
     public Shape getFigure(int n) {
-        return null; //returning null means that the operation was unsuccessful
+        Shape theFigure = figures.get(n);
+        return theFigure;
     }
+
 
     public ArrayList<Shape> showFigures() {
         return figures;
-
     }
-
-
 }
 
 
