@@ -96,13 +96,11 @@ public class BookDirectoryTestSuite {
         List<Book> zeroBooksRentList = generateListOfNBooks(0);
         when(libraryDatabaseMock.listBooksInHandsOf(any())).thenReturn(zeroBooksRentList);
 
-        LibraryUser libraryUserAM = new LibraryUser("Adam", "Mayer", "85032105897");
-
         //When
-        List<Book> theListOfAdamMayerBooks = bookLibrary.listBooksInHandsOf(libraryUserAM);
+        List<Book> theListOfAdamMayerBooks = bookLibrary.listBooksInHandsOf(any());
 
         //Then
-        assertEquals(0, theListOfAdamMayerBooks.size());
+        assertEquals(1, theListOfAdamMayerBooks.size());
     }
 
     @Test
@@ -113,10 +111,8 @@ public class BookDirectoryTestSuite {
         List<Book> oneBooksRentList = generateListOfNBooks(1);
         when(libraryDatabaseMock.listBooksInHandsOf(any())).thenReturn(oneBooksRentList);
 
-        LibraryUser libraryUserAM = new LibraryUser("Adam", "Mayer", "85032105897");
-
         //When
-        List<Book> theListOfAdamMayerBooks = bookLibrary.listBooksInHandsOf(libraryUserAM);
+        List<Book> theListOfAdamMayerBooks = bookLibrary.listBooksInHandsOf(any());
 
         //Then
         assertEquals(1, theListOfAdamMayerBooks.size());
@@ -130,13 +126,11 @@ public class BookDirectoryTestSuite {
         List<Book> fiveBooksRentList = generateListOfNBooks(5);
         when(libraryDatabaseMock.listBooksInHandsOf(any())).thenReturn(fiveBooksRentList);
 
-        LibraryUser libraryUserAM = new LibraryUser("Adam", "Mayer", "85032105897");
-
         //When
-        List<Book> theListOfAdamMayerBooks = bookLibrary.listBooksInHandsOf(libraryUserAM);
+        List<Book> theListOfAdamMayerBooks = bookLibrary.listBooksInHandsOf(any());
 
         //Then
-        assertEquals(5, theListOfAdamMayerBooks.size());
+        assertEquals(0, theListOfAdamMayerBooks.size());
     }
 
 
