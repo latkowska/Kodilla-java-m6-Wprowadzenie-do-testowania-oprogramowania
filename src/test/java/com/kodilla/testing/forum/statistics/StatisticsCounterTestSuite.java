@@ -10,7 +10,7 @@ import static org.mockito.Mockito.when;
 
 public class StatisticsCounterTestSuite {
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumPostsQuantity = 0, forumUsersQuantity = 0
     public void testAveragePostsQuantityPerForumUserOne() {
         //Given
@@ -20,12 +20,12 @@ public class StatisticsCounterTestSuite {
         when(userNames.size()).thenReturn(0);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averagePostsQuantityPerForumUser = statisticsCounter.getAveragePostsQuantityPerForumUser();
+        double averagePostsQuantityPerForumUser = statisticsCounter.getAveragePostsQuantityPerForumUser();
         //Then
         Assert.assertEquals(0, averagePostsQuantityPerForumUser);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumPostsQuantity = 0, forumUsersQuantity = 100
     public void testAveragePostsQuantityPerForumUserTwo() {
         //Given
@@ -35,12 +35,12 @@ public class StatisticsCounterTestSuite {
         when(userNames.size()).thenReturn(100);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averagePostsQuantityPerForumUser = statisticsCounter.getAveragePostsQuantityPerForumUser();
+        double averagePostsQuantityPerForumUser = statisticsCounter.getAveragePostsQuantityPerForumUser();
         //Then
         Assert.assertEquals(0, averagePostsQuantityPerForumUser);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumPostsQuantity = 1000, forumUsersQuantity = 100
     public void testAveragePostsQuantityPerForumUserThree() {
         //Given
@@ -50,12 +50,12 @@ public class StatisticsCounterTestSuite {
         when(userNames.size()).thenReturn(100);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averagePostsQuantityPerForumUser = statisticsCounter.getAveragePostsQuantityPerForumUser();
+        double averagePostsQuantityPerForumUser = statisticsCounter.getAveragePostsQuantityPerForumUser();
         //Then
         Assert.assertEquals(10, averagePostsQuantityPerForumUser);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumCommentsQuantity = 0, forumUsersQuantity = 0
     public void testAverageCommentsQuantityPerForumUserOne() {
         //Given
@@ -65,12 +65,12 @@ public class StatisticsCounterTestSuite {
         when(userNames.size()).thenReturn(0);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averageCommentsQuantityPerForumUser = statisticsCounter.getAverageCommentsQuantityPerForumUser();
+        double averageCommentsQuantityPerForumUser = statisticsCounter.getAverageCommentsQuantityPerForumUser();
         //Then
         Assert.assertEquals(0, averageCommentsQuantityPerForumUser);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumCommentsQuantity = 0, forumUsersQuantity = 100
     public void testAverageCommentsQuantityPerForumUserTwo() {
         //Given
@@ -80,12 +80,12 @@ public class StatisticsCounterTestSuite {
         when(userNames.size()).thenReturn(100);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averageCommentsQuantityPerForumUser = statisticsCounter.getAverageCommentsQuantityPerForumUser();
+        double averageCommentsQuantityPerForumUser = statisticsCounter.getAverageCommentsQuantityPerForumUser();
         //Then
         Assert.assertEquals(0, averageCommentsQuantityPerForumUser);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumCommentsQuantity = 0, forumPostsQuantity = 0
     public void testAverageCommentsQuantityPerPostOne() {
         //Given
@@ -94,12 +94,12 @@ public class StatisticsCounterTestSuite {
         when(statisticsMock.getPostsQuantity()).thenReturn(0);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
+        double averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
         //Then
         Assert.assertEquals(0, averageCommentsQuantityPerPost);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumCommentsQuantity = 0, forumPostsQuantity = 1000
     public void testAverageCommentsQuantityPerPostTwo() {
         //Given
@@ -108,12 +108,12 @@ public class StatisticsCounterTestSuite {
         when(statisticsMock.getPostsQuantity()).thenReturn(1000);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
+        double averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
         //Then
         Assert.assertEquals(0, averageCommentsQuantityPerPost);
     }
 
-    @Test (expected = ArithmeticException.class)
+    @Test
     //forumCommentsQuantity = 10000, forumPostsQuantity = 1000
     public void testAverageCommentsQuantityPerPostThree() {
         //Given
@@ -122,12 +122,12 @@ public class StatisticsCounterTestSuite {
         when(statisticsMock.getPostsQuantity()).thenReturn(1000);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
+        double averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
         //Then
         Assert.assertEquals(10, averageCommentsQuantityPerPost);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     //forumCommentsQuantity = 50, forumPostsQuantity = 1000
     public void testAverageCommentsQuantityPerPostFour() {
         //Given
@@ -136,9 +136,9 @@ public class StatisticsCounterTestSuite {
         when(statisticsMock.getPostsQuantity()).thenReturn(1000);
         StatisticsCounter statisticsCounter = new StatisticsCounter(statisticsMock);
         //When
-        long averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
+        double averageCommentsQuantityPerPost = statisticsCounter.getAverageCommentsQuantityPerPost();
         //Then
-        Assert.assertEquals(0.05, averageCommentsQuantityPerPost);
+        Assert.assertEquals(0.05, averageCommentsQuantityPerPost, 0.001);
     }
 }
 

@@ -7,47 +7,44 @@ import java.util.List;
 public class StatisticsCounter {
 
     Statistics statistics; //obiekty brakującej klasy, nie interfejsu o tej samej nazwie
-    public int forumUsersQuantity;
-    public int forumPostsQuantity;
-    public int forumCommentsQuantity;
-    public long averagePostsQuantityPerForumUser;
-    public long averageCommentsQuantityPerForumUser;
-    public long averageCommentsQuantityPerPost;
-
 
     public StatisticsCounter(Statistics statistics) {
         this.statistics = statistics;
     }
 
+    int forumPostsQuantity;
+    int forumUsersQuantity;
+    int forumCommentsQuantity;
+
     public int getForumUsersQuantity() {
         List<String> userNames = statistics.getUsersNames();
-        forumUsersQuantity = userNames.size();
+        int forumUsersQuantity = userNames.size();
         return forumUsersQuantity;
     }
 
     public int getForumPostsQuantity() {
-        forumPostsQuantity = statistics.getPostsQuantity();
+        int forumPostsQuantity = statistics.getPostsQuantity();
         return forumPostsQuantity;
     }
 
     public int getForumCommentsQuantity() {
-        forumCommentsQuantity = statistics.getCommentsquantity();
+        int forumCommentsQuantity = statistics.getCommentsquantity();
         return forumCommentsQuantity;
     }
 
 
-    public long getAveragePostsQuantityPerForumUser() {
-        averagePostsQuantityPerForumUser = forumPostsQuantity / forumUsersQuantity;
+    public double getAveragePostsQuantityPerForumUser() {
+        double averagePostsQuantityPerForumUser = forumPostsQuantity / forumUsersQuantity;
         return averagePostsQuantityPerForumUser;
     }
 
-    public long getAverageCommentsQuantityPerForumUser() {
-        averageCommentsQuantityPerForumUser = forumCommentsQuantity / forumUsersQuantity;
+    public double getAverageCommentsQuantityPerForumUser() {
+        double averageCommentsQuantityPerForumUser = forumCommentsQuantity / forumUsersQuantity;
         return averageCommentsQuantityPerForumUser;
     }
 
-    public long getAverageCommentsQuantityPerPost() {
-        averageCommentsQuantityPerPost = forumCommentsQuantity / forumPostsQuantity;
+    public double getAverageCommentsQuantityPerPost() {
+        double averageCommentsQuantityPerPost = forumCommentsQuantity / forumPostsQuantity;
         return averageCommentsQuantityPerPost;
     }
 
