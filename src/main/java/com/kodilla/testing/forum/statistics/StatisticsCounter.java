@@ -41,18 +41,19 @@ public class StatisticsCounter {
         return averagePostsQuantityPerForumUser;
     }
 
-    public long getAverageCommentsQuantityPerForumUser(Statistics statistics) {
+    public long getAverageCommentsQuantityPerForumUser() {
         averageCommentsQuantityPerForumUser = forumCommentsQuantity / forumUsersQuantity;
         return averageCommentsQuantityPerForumUser;
     }
 
-    public long getAverageCommentsQuantityPerPost(Statistics statistics) {
+    public long getAverageCommentsQuantityPerPost() {
         averageCommentsQuantityPerPost = forumCommentsQuantity / forumPostsQuantity;
         return averageCommentsQuantityPerPost;
     }
 
 
-    public void showStatistics() {//wyświtla zapamiętane statystyki
+    /**
+    public void showStatistics() {
         System.out.println("Forum users quantity: " + forumUsersQuantity + ", / "
                 + "Posts quantity: " + forumPostsQuantity + ", / "
                 + "Comments quantity: " + forumCommentsQuantity + ", / "
@@ -60,5 +61,5 @@ public class StatisticsCounter {
                 + "Average Comments Quantity Per Forum User: " + averageCommentsQuantityPerForumUser + ", / "
                 + "Average Comments Quantity Per Post: " + averageCommentsQuantityPerPost);
     }
-
+*/
 }
